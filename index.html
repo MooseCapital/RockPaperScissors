@@ -35,7 +35,7 @@ function playRound(playerPick, computerPick) {
         
     } else if (safePick == "rock" && computerPick == "paper") {
         cPScore++;
-        return "You Lose! paper beats rock";
+        return "You Lose! paper beats rock"; 
         
     } else if (safePick == "paper" && computerPick == "rock") {
         playerScore++;
@@ -55,8 +55,8 @@ function playRound(playerPick, computerPick) {
         
     } else {
         return "error, something misspelled";
-    }
-
+    } 
+    
 
 }
 function game() {
@@ -74,7 +74,7 @@ function game() {
     console.log(`Your score: ${playerScore}. Computer's score: ${cPScore}`);
     playerChoice = window.prompt("Pick rock, paper or scissors");
     console.log(playRound(playerChoice, computerPlay()));
-    console.log(`Your score: ${playerScore}. Computer's score: ${cPScore}`);
+    console.log(`Your score: ${playerScore}. Computer's score: ${cPScore}`);    
     
 
 }
