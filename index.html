@@ -4,85 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script  src="js/game.js" defer></script>
+
 </head>
 <body>
-    
+<div id="container">
+    <button class="rockButton">rock</button>
+    <button class="paperButton">paper</button>
+    <button class="scissorsButton">scissors</button>
+    <div class="roundResult"></div>
+    <div class="pScore"></div>
+    <div class="cScore"></div>
 
-<script>
-let playerScore = 0;
-let cPScore = 0;
-function computerPlay() {
-    let cpPick = Math.floor((Math.random()* 3) + 1);
-    if (cpPick == 1) {
-        return "rock";
-    } else if (cpPick == 2) {
-        return "paper";
-    } else if (cpPick == 3) {
-        return "scissors";
-    } else {
-        console.log("error, number was 0 or higher than 3")
-        return null;
-    }
-}
-function playRound(playerPick, computerPick) {
-    const safePick = playerPick.toLowerCase();
-    if (safePick == computerPick) {
-        return "It is a Draw, Nobody Wins";
-    } else if (safePick == "rock" && computerPick == "scissors") {
-        playerScore++;
-        return "You Win! rock beats scissors";
-        
-    } else if (safePick == "rock" && computerPick == "paper") {
-        cPScore++;
-        return "You Lose! paper beats rock"; 
-        
-    } else if (safePick == "paper" && computerPick == "rock") {
-        playerScore++;
-        return "You Win! paper beats rock";
-        
-    } else if (safePick == "paper" && computerPick == "scissors") {
-        cPScore++;
-        return "You Lose! scissors beats paper";
-        
-    } else if (safePick == "scissors" && computerPick == "paper") {
-        playerScore++;
-        return "You Win! scissors beats paper";
-        
-    } else if (safePick == "scissors" && computerPick == "rock") {
-        cPScore++;
-        return "You Lose! rock beats scissors";
-        
-    } else {
-        return "error, something misspelled";
-    } 
-    
+    <div class="gameEnd"></div>
+</div>
 
-}
-function game() {
-    let playerChoice = window.prompt("Pick rock, paper or scissors");
-    console.log(playRound(playerChoice, computerPlay()));
-    console.log(`Your score: ${playerScore}. Computer's score: ${cPScore}`);
-    playerChoice = window.prompt("Pick rock, paper or scissors");
-    console.log(playRound(playerChoice, computerPlay()));
-    console.log(`Your score: ${playerScore}. Computer's score: ${cPScore}`);
-    playerChoice = window.prompt("Pick rock, paper or scissors");
-    console.log(playRound(playerChoice, computerPlay()));
-    console.log(`Your score: ${playerScore}. Computer's score: ${cPScore}`);
-    playerChoice = window.prompt("Pick rock, paper or scissors");
-    console.log(playRound(playerChoice, computerPlay()));
-    console.log(`Your score: ${playerScore}. Computer's score: ${cPScore}`);
-    playerChoice = window.prompt("Pick rock, paper or scissors");
-    console.log(playRound(playerChoice, computerPlay()));
-    console.log(`Your score: ${playerScore}. Computer's score: ${cPScore}`);    
-    
-
-}
-
-game();
-
-
-</script>
 
 </body>
 </html>
